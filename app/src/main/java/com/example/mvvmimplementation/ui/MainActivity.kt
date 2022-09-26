@@ -2,42 +2,23 @@ package com.example.mvvmimplementation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvmimplementation.R
+import com.example.mvvmimplementation.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity()  , View.OnClickListener{
-    override fun onClick(view: View) {
-        when(view.id){
-            R.id.btnGetMovie -> {
-                tvMovieName.visibility = View.VISIBLE
-                movieViewModel.getMovie()
-            }
-        }
-    }
-
-    private lateinit var tvMovieName : TextView
-    private lateinit var btnGetMovie : Button
+class MainActivity : AppCompatActivity() {
     private lateinit var movieViewModel: MovieViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        init()
-
-        movieViewModel.mutableLiveData.observe(this
-        ) { movieModel -> tvMovieName.text = movieModel.movieName }
-
-        btnGetMovie.setOnClickListener(this)
-    }
-
-    private fun init(){
-        tvMovieName = findViewById(R.id.tvMovieName)
-        btnGetMovie = findViewById(R.id.btnGetMovie)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         movieViewModel = ViewModelProvider(this)[MovieViewModel::class.java]
+
+        binding.movieViewModel = this.movieViewModel
+        binding.lifecycleOwner = this
     }
+
 }
