@@ -1,6 +1,7 @@
 # MVVM CleanArchitecture
 ## What is Clean Architecture ?
-A universally agreed upon way to write and read code with others in a clear manner
+Clean architecture is a method of software development in which you should be able to identify what a program performs merely by looking at its source code
+
 
 ## What are the types of Clean Architecture ??
   - MVC : Model View Controller
