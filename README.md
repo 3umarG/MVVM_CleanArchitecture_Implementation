@@ -12,7 +12,7 @@ Clean architecture is a method of software development in which you should be ab
 By using a ViewModel that get the Data from APIs , DataBase or other External resources and put them in the View by using DataBinding and LiveData .
 
 ## Model :
-![Model View ViewModel ](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/MVVMPattern.png/500px-MVVMPattern.png)
+![Model View ViewModel ](https://i0.wp.com/resocoder.com/wp-content/uploads/2018/08/mvvm-architecture-complete-overview.png?w=492&ssl=1)
 
 
 ## Advantages of MVVM Pattern:
